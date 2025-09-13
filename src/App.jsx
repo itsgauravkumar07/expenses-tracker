@@ -11,7 +11,12 @@ function App() {
       <BrowserRouter>
         <Navbar />
 
-         
+          <Routes>
+            <Route path="/" element={ <Dashboard/> } /> 
+            <Route path="/add" element={ <AddExpense/> } /> 
+            <Route path="/setting" element={ <Setting/> } /> 
+          </Routes>
+
       </BrowserRouter>
     </>
   )
