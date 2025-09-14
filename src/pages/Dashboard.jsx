@@ -21,9 +21,9 @@ function Dashboard(){
 
             <div>
                 
-                {expense.map((expen) => (
-                     <li key={expen.id}>
-                        {expen.name} - {expen.amount} - {expen.date} - {expen.category}
+                {expense.map((ex) => (
+                     <li key={ex.id}>
+                        {ex.name} - {ex.amount} - {ex.date} - {ex.category}
                     </li>
                 ))}
             
