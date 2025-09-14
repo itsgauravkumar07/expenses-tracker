@@ -15,6 +15,7 @@ function AddExpense(){
         category: ""
     });
 
+    const numbericAmount = Number(amount);
 
     const handleAdd = (e) => {
 
@@ -25,7 +26,7 @@ function AddExpense(){
             return;
         }
 
-        if(amount <= 0){
+        if(numbericAmount <= 0 || isNaN(numbericAmount)){
            setError(oldarr => ({...oldarr, amount: "Enter valid amount"}));
             return;
         }
@@ -40,19 +41,17 @@ function AddExpense(){
           return;
         }
 
-        const expense = [{
+        const expense = {
         id: Date.now(),
         name: name,
-        amount: amount,
+        amount: numbericAmount,
         date: date,
         category: category
-    }];
+    };
 
     addExpense(expense);
     alert("Expense added successfully");
-    }
-
-    
+    } 
 
     return(
         <div>
@@ -63,15 +62,15 @@ function AddExpense(){
 
                 <label>Amount</label><br />
                 <input type="number" placeholder="₹ 500" value={amount} onChange={(e) => setAmount(e.target.value)}/> <br />
-                {error && <div>{error.amount}</div>} <br />
+                {error.amount && <div>{error.amount}</div>} <br />
 
                 <label>Category</label><br />
                 <input type="text" placeholder="e.g food, shopping" value={category} onChange={(e) => setCategory(e.target.value)}/> <br />
-                {error && <div>{error.category}</div>} <br />
+                {error.category && <div>{error.category}</div>} <br />
                 
                 <label>Date</label><br />
                 <input type="date" value={date} onChange={(e) => setDate(e.target.value)}/> <br />
-                {error && <div>{error.date}</div>} <br />
+                {error.date && <div>{error.date}</div>} <br />
 
                 <button type="submit">Add Expense</button>
             </form>
