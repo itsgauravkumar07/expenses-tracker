@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getExpense } from "../services/localStorage";
+import { getExpense, saveExpense } from "../services/localStorage";
 
 
 function Dashboard(){
@@ -8,11 +8,17 @@ function Dashboard(){
 
     useEffect(() => {
        const allExpense = getExpense();
-       console.log("Fetched expense: ", allExpense);
         setExpense(allExpense);
     }, []);
 
  
+    const handleDelete = (id) => {
+        const existing = getExpense();
+        const newList = existing.filter(i => i.id !== id);
+
+        saveExpense(newList);
+        setExpense(newList);
+    }
 
 
     return(
@@ -23,11 +29,13 @@ function Dashboard(){
                 
                 {expense.map((ex) => (
                      <li key={ex.id}>
-                        {ex.name} - {ex.amount} - {ex.date} - {ex.category}
+                        {ex.name} - {ex.amount} - {ex.date} - {ex.category} 
+                        <button onClick = {() => {handleDelete(ex.id)}} >Delete</button>
                     </li>
                 ))}
             
             </div>
+
         </div>
     )
 }
