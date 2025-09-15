@@ -42,6 +42,7 @@ function Dashboard(){
         setExpense(newList);
     }
 
+    const active = Object.keys(categoryAmount).length;
    
     return(
         <div>
@@ -51,7 +52,12 @@ function Dashboard(){
                 <p>{total}</p>
             </div>
 
-           
+            <div>
+                <h1>Active categories</h1>
+                <p>{active}</p>
+            </div>
+
+            
 
 
             <h1>All expnese</h1>
