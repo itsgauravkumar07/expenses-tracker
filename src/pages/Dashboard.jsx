@@ -13,7 +13,6 @@ function Dashboard(){
         setExpense(allExpense);
     }, []);
 
-
     useEffect(() => {
         const catAmount = {};
         let amountTotal = 0;
@@ -28,7 +27,7 @@ function Dashboard(){
             amountTotal += Number(ex.amount);
            
         })
-        
+
         setCategoryAmount(catAmount);
         setTotal(amountTotal);
 
@@ -43,7 +42,8 @@ function Dashboard(){
     }
 
     const active = Object.keys(categoryAmount).length;
-   
+    const averagePerDay = total/30;
+
     return(
         <div>
 
@@ -57,7 +57,10 @@ function Dashboard(){
                 <p>{active}</p>
             </div>
 
-            
+            <div>
+                <h1>Average per day spend</h1>
+                <p>{averagePerDay.toFixed(2)}</p>
+            </div>
 
 
             <h1>All expnese</h1>
