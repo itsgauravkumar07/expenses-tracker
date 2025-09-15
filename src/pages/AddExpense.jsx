@@ -65,7 +65,14 @@ function AddExpense(){
                 {error.amount && <div>{error.amount}</div>} <br />
 
                 <label>Category</label><br />
-                <input type="text" placeholder="e.g food, shopping" value={category} onChange={(e) => setCategory(e.target.value)}/> <br />
+                <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                    
+                    <option value="">Category</option>
+                    <option value="food">Food</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="bill">Bill</option>
+
+                </select> <br />
                 {error.category && <div>{error.category}</div>} <br />
                 
                 <label>Date</label><br />
