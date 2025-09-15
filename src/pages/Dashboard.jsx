@@ -5,25 +5,32 @@ import { getExpense, saveExpense } from "../services/localStorage";
 function Dashboard(){
 
     const[expense, setExpense] = useState([]);
-    const[categoryTotals, setCategoryTotals] = useState({});
+    const[categoryAmount, setCategoryAmount] = useState({});
+    const[total, setTotal] = useState(0);
 
     useEffect(() => {
        const allExpense = getExpense();
         setExpense(allExpense);
     }, []);
 
+
     useEffect(() => {
-        const total = {};
+        const catAmount = {};
+        let amountTotal = 0;
+
         expense.map((ex) => {
             
-            if(!total[ex.category]){
-                total[ex.category] = 0;
+            if(!catAmount[ex.category]){
+                catAmount[ex.category] = 0;
             }
 
-            total[ex.category] += Number(ex.amount);
+            catAmount[ex.category] += Number(ex.amount);
+            amountTotal += Number(ex.amount);
+           
         })
-
-        setCategoryTotals(total);
+        
+        setCategoryAmount(catAmount);
+        setTotal(amountTotal);
 
     }, [expense]);
 
@@ -35,8 +42,18 @@ function Dashboard(){
         setExpense(newList);
     }
 
+   
     return(
         <div>
+
+            <div>
+                <h1>Total expense</h1>
+                <p>{total}</p>
+            </div>
+
+           
+
+
             <h1>All expnese</h1>
 
             <div>
@@ -53,7 +70,7 @@ function Dashboard(){
             <h2>Expense Summary</h2>
              <div>
                 {
-                   Object.entries(categoryTotals).map(([category, total], index) => (
+                   Object.entries(categoryAmount).map(([category, total], index) => (
                     <li key={index}>{category} - {total}</li>
                    ))
                 }
