@@ -51,7 +51,15 @@ function AddExpense(){
 
     addExpense(expense);
     alert("Expense added successfully");
+
+    setName("");
+    setAmount("");
+    setCategory("");
+    setDate("");
+    
     } 
+
+    
 
     return(
         <div>
