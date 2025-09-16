@@ -7,6 +7,7 @@ function Dashboard(){
     const[expense, setExpense] = useState([]);
     const[categoryAmount, setCategoryAmount] = useState({});
     const[total, setTotal] = useState(0);
+    const[catFiltered, setCatFiltered] = useState("all");
 
     useEffect(() => {
        const allExpense = getExpense();
@@ -44,6 +45,12 @@ function Dashboard(){
     const active = Object.keys(categoryAmount).length;
     const averagePerDay = total/30;
 
+   const catFilteredList = expense.filter((ex) => {
+    if (catFiltered === "all") return true;
+    return ex.category === catFiltered;
+   })
+    
+
     return(
         <div>
 
@@ -67,16 +74,32 @@ function Dashboard(){
 
             <div>
                 
-                {expense.map((ex) => (
-                     <li key={ex.id}>
+               <select onChange={(e) => setCatFiltered(e.target.value)}>
+                <option value="all">All</option>
+                <option value="food">Food</option>
+                <option value="shopping">Shopping</option>
+                <option value="bill">Bills</option>
+               </select>
+            </div>
+
+            <div>
+               {catFilteredList.length > 0 ? catFilteredList.map((ex) => (
+                   
+                        <li key={ex.id}> 
                         {ex.name} - {ex.amount} - {ex.date} - {ex.category} 
                         <button onClick = {() => {handleDelete(ex.id)}} >Delete</button>
                     </li>
-                ))}
-            
+                     
+                )) : 
+                    <p>No expenese found</p>
+                }
+                
+                
+               
             </div>
 
-            <h2>Expense Summary</h2>
+            <h2>Expense Summary</h2>            
+            
              <div>
                 {
                    Object.entries(categoryAmount).map(([category, total], index) => (
