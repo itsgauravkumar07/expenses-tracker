@@ -16,3 +16,7 @@ export const addExpense = (expense) => {
     saveExpense(updated);
 }
 
+export const deleteAllExpense = () => {
+    localStorage.clear();
+}
+
