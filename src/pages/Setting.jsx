@@ -1,8 +1,19 @@
+import { deleteAllExpense } from "../services/localStorage";
+
+
 function Setting(){
 
+    
+
+    const handleDelete = () => {
+        deleteAllExpense();
+       
+    }
     return(
         <div>
-            <p>You are on setting page</p>
+            <p>Clear all data</p>
+            <button onClick={handleDelete}>Clear all</button>
+            
         </div>
     )
 }
