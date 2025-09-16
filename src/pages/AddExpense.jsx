@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { addExpense } from "../services/localStorage";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AddExpense(){
 
@@ -49,17 +51,16 @@ function AddExpense(){
         category: category
     };
 
+    const notify = () => toast.success("Expense added successfully!!", { autoClose: 3000 });
+
     addExpense(expense);
-    alert("Expense added successfully");
+    notify();
 
     setName("");
     setAmount("");
     setCategory("");
     setDate("");
-    
     } 
-
-    
 
     return(
         <div>
@@ -89,7 +90,7 @@ function AddExpense(){
 
                 <button type="submit">Add Expense</button>
             </form>
-
+            <ToastContainer position="top-right" />
         </div>
     )
 }

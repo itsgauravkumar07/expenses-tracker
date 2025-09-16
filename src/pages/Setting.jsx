@@ -8,7 +8,7 @@ function Setting(){
 
     const handleDelete = () => {
         deleteAllExpense();
-       
+        notify();
     }
     return(
         <div>
