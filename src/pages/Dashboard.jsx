@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { Card } from "../components/Card";
 import { getExpense, saveExpense } from "../services/localStorage";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import {ChartBarIcon, ChartPieIcon} from "@heroicons/react/24/outline";
 
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
@@ -63,21 +65,9 @@ function Dashboard(){
     return(
         <div>
 
-            <div>
-                <h1>Total expense</h1>
-                <p>{total}</p>
-            </div>
-
-            <div>
-                <h1>Active categories</h1>
-                <p>{active}</p>
-            </div>
-
-            <div>
-                <h1>Average per day spend</h1>
-                <p>{averagePerDay.toFixed(2)}</p>
-            </div>
-
+            <Card title="Total expense" des="This total money spend this month" value={total} icon={<ChartBarIcon className="cardIcon" />} />
+            <Card title="Active categorues" des="Active spending categories" value={active} icon={<ChartPieIcon className="cardIcon" />} />
+            <Card title="Average per day spend" des="Based on 30-day period" value={averagePerDay.toFixed(2)} icon={"$"} />
 
             <h1>All expnese</h1>
 
