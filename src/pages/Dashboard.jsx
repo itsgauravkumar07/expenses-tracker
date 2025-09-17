@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card } from "../components/Card";
+import { Filter } from "../components/Filter";
 import { getExpense, saveExpense } from "../services/localStorage";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import {ChartBarIcon, ChartPieIcon} from "@heroicons/react/24/outline";
@@ -69,16 +70,9 @@ function Dashboard(){
             <Card title="Active categorues" des="Active spending categories" value={active} icon={<ChartPieIcon className="cardIcon" />} />
             <Card title="Average per day spend" des="Based on 30-day period" value={averagePerDay.toFixed(2)} icon={"$"} />
 
-            <h1>All expnese</h1>
-
             <div>
-                
-               <select onChange={(e) => setCatFiltered(e.target.value)}>
-                <option value="all">All</option>
-                <option value="food">Food</option>
-                <option value="shopping">Shopping</option>
-                <option value="bill">Bills</option>
-               </select>
+                <h1>All expnese</h1>
+                <Filter value={catFiltered} onchange={setCatFiltered} />
             </div>
 
             <div>
