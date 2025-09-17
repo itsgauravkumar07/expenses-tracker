@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Card } from "../components/Card";
 import { Filter } from "../components/Filter";
 import { ExpenseList } from "../components/ExpenseList";
+import { CategorySummary } from "../components/CategorySummary";
 import { getExpense, saveExpense } from "../services/localStorage";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import {ChartBarIcon, ChartPieIcon} from "@heroicons/react/24/outline";
@@ -83,11 +84,7 @@ function Dashboard(){
             <h2>Expense Summary</h2>            
             
              <div>
-                {
-                   Object.entries(categoryAmount).map(([category, total], index) => (
-                    <li key={index}>{category} - {total}</li>
-                   ))
-                }
+                <CategorySummary categoryAmount={categoryAmount} />
             </div>
 
             <div>
