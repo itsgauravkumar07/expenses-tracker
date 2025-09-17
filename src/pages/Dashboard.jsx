@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "../components/Card";
 import { Filter } from "../components/Filter";
+import { ExpenseList } from "../components/ExpenseList";
 import { getExpense, saveExpense } from "../services/localStorage";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import {ChartBarIcon, ChartPieIcon} from "@heroicons/react/24/outline";
@@ -76,17 +77,7 @@ function Dashboard(){
             </div>
 
             <div>
-               {catFilteredList.length > 0 ? catFilteredList.map((ex) => (
-                   
-                        <li key={ex.id}> 
-                        {ex.name} - {ex.amount} - {ex.date} - {ex.category} 
-                        <button onClick = {() => {handleDelete(ex.id)}} >Delete</button>
-                    </li>
-                     
-                )) : 
-                    <p>No expenese found</p>
-                }
-                  
+             <ExpenseList expenses={catFilteredList} onDelete={handleDelete}/>     
             </div>
 
             <h2>Expense Summary</h2>            
