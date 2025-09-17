@@ -1,5 +1,5 @@
 
-export const Filter = (value, onChange) => {
+export const Filter = ({value, onChange}) => {
 
     return(
             <select

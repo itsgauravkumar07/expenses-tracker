@@ -72,7 +72,7 @@ function Dashboard(){
 
             <div>
                 <h1>All expnese</h1>
-                <Filter value={catFiltered} onchange={setCatFiltered} />
+                <Filter value={catFiltered} onChange={setCatFiltered} />
             </div>
 
             <div>
@@ -86,9 +86,7 @@ function Dashboard(){
                 )) : 
                     <p>No expenese found</p>
                 }
-                
-                
-               
+                  
             </div>
 
             <h2>Expense Summary</h2>            
