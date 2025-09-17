@@ -3,12 +3,9 @@ import { Card } from "../components/Card";
 import { Filter } from "../components/Filter";
 import { ExpenseList } from "../components/ExpenseList";
 import { CategorySummary } from "../components/CategorySummary";
+import { ExpenseChart } from "../components/ExpenseChart";
 import { getExpense, saveExpense } from "../services/localStorage";
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import {ChartBarIcon, ChartPieIcon} from "@heroicons/react/24/outline";
-
-
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 
 
 function Dashboard(){
@@ -81,7 +78,8 @@ function Dashboard(){
              <ExpenseList expenses={catFilteredList} onDelete={handleDelete}/>     
             </div>
 
-            <h2>Expense Summary</h2>            
+            <h2>Expense Summary</h2> 
+            <ExpenseChart  data={chartData}/>         
             
              <div>
                 <CategorySummary categoryAmount={categoryAmount} />
@@ -89,24 +87,7 @@ function Dashboard(){
 
             <div>
                  <h2>Expense Summary Chart</h2>
-                    <PieChart width={400} height={300}>
-                        <Pie
-                        data={chartData}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={100}
-                        fill="#8884d8"
-                        label
-                        >
-                        {chartData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                        </Pie>
-                        <Tooltip />
-                        <Legend />
-                    </PieChart>
+                    
             </div>
 
         </div>
