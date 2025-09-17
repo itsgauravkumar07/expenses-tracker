@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { getExpense, saveExpense } from "../services/localStorage";
+import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+
+
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 
 
 function Dashboard(){
@@ -48,8 +52,13 @@ function Dashboard(){
    const catFilteredList = expense.filter((ex) => {
     if (catFiltered === "all") return true;
     return ex.category === catFiltered;
-   })
-    
+   });
+
+    const chartData = Object.entries(categoryAmount).map(([category, total]) => ({
+    name: category,
+    value: total
+   }));
+
 
     return(
         <div>
@@ -106,6 +115,28 @@ function Dashboard(){
                     <li key={index}>{category} - {total}</li>
                    ))
                 }
+            </div>
+
+            <div>
+                 <h2>Expense Summary Chart</h2>
+                    <PieChart width={400} height={300}>
+                        <Pie
+                        data={chartData}
+                        dataKey="value"
+                        nameKey="name"
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={100}
+                        fill="#8884d8"
+                        label
+                        >
+                        {chartData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                        </Pie>
+                        <Tooltip />
+                        <Legend />
+                    </PieChart>
             </div>
 
         </div>
