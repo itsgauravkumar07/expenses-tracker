@@ -65,12 +65,16 @@ function Dashboard(){
     return(
         <div className="mx-6">
 
+
+            {/* Expense summary cards */}
             <div className="cardContainer">
                 <Card title="Total expense" des="Expense of this month" value={"₹" + total} icon={<ChartBarIcon  />} />
                 <Card title="Categories" des="Active spending categories" value={active} icon={<ChartPieIcon  />} />
                 <Card title="Average per day spend" des="Based on 30-day period" value={"₹" + averagePerDay.toFixed(2)} icon={"$"} />
             </div>
            
+
+           {/* Expenese List */}
            <div className="expenseCard">
                 <div className="cardInner">
                     <h1 className="cardHeading">All expnese</h1>
@@ -83,16 +87,24 @@ function Dashboard(){
            </div>
            
 
-           
-            <div>
-                 <h2>Expense Summary</h2> 
-                <CategorySummary categoryAmount={categoryAmount} />
-            </div>
 
-            <div>
-                 <h2>Expense Summary Chart</h2>
-                 <ExpenseChart data={chartData}/> 
+            <div className="categorySummaryCard">
+                {/* Expense summay component by category wise*/}
+                <div className="categorySummaryCardText">
+                    
+                        <h2 className="cardHeading">Expense Summary</h2> 
+                        <CategorySummary categoryAmount={categoryAmount} />
+                    
+                    
+                </div>
+
+                {/* Expense summary chart */}
+                <div className="categorySummaryChart">
+                    <h2 className="cardHeading">Expense Summary Chart</h2>
+                    <ExpenseChart data={chartData}/> 
+                </div>
             </div>
+           
 
         </div>
     )

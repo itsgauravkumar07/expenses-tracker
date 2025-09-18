@@ -8,11 +8,13 @@ export const CategorySummary = ({ categoryAmount }) => {
   }
 
     return(
-        <div>
+        <div className="mt-5">
             {entries.map(([category, total], index) => (
-            <li key={index}>
-            {category} - {total}
-            </li>
+            <div key={index}
+             className="innerCategorySummaryCardText"> 
+              <span>{category}</span> 
+              <span className="cardHeading">{"₹" + total}</span>
+            </div>
         ))}
         </div>
        

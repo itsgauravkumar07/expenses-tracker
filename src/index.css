@@ -106,6 +106,26 @@
     .noExpense {
         @apply text-center px-2 py-2 border-1 border-gray-200 rounded-md h-20 flex flex-col justify-center mt-5 text-gray-600
     }
+
+
+    /* Expense summary and chart */
+    .categorySummaryCard {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full justify-between my-15
+    }
+
+
+    /* Text category summary card */
+    .categorySummaryCardText {
+        @apply rounded-lg bg-gray-100 px-8 py-6 shadow-lg w-full border-2 border-gray-300
+    }
     
+    .innerCategorySummaryCardText {
+        @apply flex flex-row justify-between
+    }
+
+    /* Chart category summary card */
+    .categorySummaryChart {
+        @apply rounded-lg bg-gray-100 px-8 py-6 shadow-lg flex flex-col w-full border-2 border-gray-300 justify-between
+    }
 }
 
