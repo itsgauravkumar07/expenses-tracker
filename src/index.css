@@ -20,11 +20,11 @@
 
     /* Buttons */
     .primaryBtn {
-        @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition
+        @apply bg-violet-600 text-white px-4 py-2 rounded-lg hover:bg-violet-700 transition w-full shadow-sm
     }
 
     .secondaryBtn {
-        @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition
+        @apply bg-white border-1 border-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-100 transition w-full mt-2 shadow-sm
     }
 
     .dangerBtn {
@@ -118,7 +118,7 @@
     .categorySummaryCardText {
         @apply rounded-lg bg-gray-100 px-8 py-6 shadow-lg w-full border-2 border-gray-300
     }
-    
+    /* inner category summary card */
     .innerCategorySummaryCardText {
         @apply flex flex-row justify-between
     }
@@ -127,9 +127,40 @@
     .categorySummaryChart {
         @apply rounded-lg bg-gray-100 px-8 py-6 shadow-lg flex flex-col w-full border-2 border-gray-300 justify-between
     }
-
-    .categoryChart{
+    /* Inner category chart */
+    .innerCategoryChart{
         @apply mt-5 flex flex-col items-center justify-center
     }
+
+
+
+
+    /* Form design */
+
+    .formContainer{
+        @apply mx-6 flex flex-col justify-center items-center my-15
+    }    
+
+    .form{
+        @apply bg-gray-100 border-2 border-gray-300 px-14 py-10 rounded-lg
+    }
+
+    .formHeader{
+        @apply flex flex-col justify-center items-center gap-2 mb-5
+    }
+
+    .formPlusIcon{
+        @apply w-10 h-10 bg-indigo-300 rounded-3xl px-2
+    }
+
+    .formLabel{
+        @apply font-medium text-gray-700
+    }
+
+    .formInput{
+        @apply border-1 border-gray-200 bg-white w-full rounded-lg mt-2 px-2 py-2
+    }
+
 }
+
 

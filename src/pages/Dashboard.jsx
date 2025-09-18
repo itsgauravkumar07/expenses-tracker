@@ -74,6 +74,7 @@ function Dashboard(){
             </div>
            
 
+
            {/* Expenese List */}
            <div className="expenseCard">
                 <div className="cardInner">
@@ -91,11 +92,8 @@ function Dashboard(){
             <div className="categorySummaryCard">
                 {/* Expense summay component by category wise*/}
                 <div className="categorySummaryCardText">
-                    
-                        <h2 className="cardHeading">Expense Summary</h2> 
-                        <CategorySummary categoryAmount={categoryAmount} />
-                    
-                    
+                    <h2 className="cardHeading">Expense Summary</h2> 
+                    <CategorySummary categoryAmount={categoryAmount} />
                 </div>
 
                 {/* Expense summary chart */}

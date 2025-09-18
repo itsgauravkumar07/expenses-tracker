@@ -5,7 +5,7 @@ const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 export const ExpenseChart = ({data}) => {
 
     return (
-        <div className="categoryChart">
+        <div className="innerCategoryChart">
             <PieChart width={400} height={300}>
                     <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label >
                         { data.map((entry, index) => (

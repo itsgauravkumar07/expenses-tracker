@@ -2,6 +2,7 @@ import { useState } from "react";
 import { addExpense } from "../services/localStorage";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {PlusIcon} from "@heroicons/react/24/outline";
 
 function AddExpense(){
 
@@ -63,34 +64,43 @@ function AddExpense(){
     } 
 
     return(
-        <div>
-            <form onSubmit={(e) => handleAdd(e)}>
-                <label>Expense name</label> <br />
-                <input type="text" placeholder="e.g Movies, Fuel" value={name} onChange={(e) => setName(e.target.value)}/> <br />
-                {error.name && <div>{error.name}</div>} <br />
+        <div className="formContainer">
+                <div className="form">
+                    <div className="formHeader">
+                        <PlusIcon className="formPlusIcon"/>
+                        <h1 className="cardHeading">Add new Expense</h1>
+                        <p className="cardSubHeading">Keep track of your money by adding expenses</p>
+                    </div>
 
-                <label>Amount</label><br />
-                <input type="number" placeholder="₹ 500" value={amount} onChange={(e) => setAmount(e.target.value)}/> <br />
-                {error.amount && <div>{error.amount}</div>} <br />
+                    <form onSubmit={(e) => handleAdd(e)}>
+                        <label className="formLabel">Expense name</label> <br />
+                        <input type="text" placeholder="e.g Movies, Fuel" value={name} onChange={(e) => setName(e.target.value)} className="formInput"/> <br />
+                        {error.name && <div>{error.name}</div>} <br />
 
-                <label>Category</label><br />
-                <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                    
-                    <option value="">Category</option>
-                    <option value="food">Food</option>
-                    <option value="shopping">Shopping</option>
-                    <option value="bill">Bill</option>
+                        <label className="formLabel">Amount</label><br />
+                        <input type="number" placeholder="₹ 500" value={amount} onChange={(e) => setAmount(e.target.value)} className="formInput" /> <br />
+                        {error.amount && <div>{error.amount}</div>} <br />
 
-                </select> <br />
-                {error.category && <div>{error.category}</div>} <br />
-                
-                <label>Date</label><br />
-                <input type="date" value={date} onChange={(e) => setDate(e.target.value)}/> <br />
-                {error.date && <div>{error.date}</div>} <br />
+                        <label className="formLabel">Category</label><br />
+                        <select value={category} onChange={(e) => setCategory(e.target.value)} className="formInput">
+                            
+                            <option value="">Category</option>
+                            <option value="food">Food</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="bill">Bill</option>
 
-                <button type="submit">Add Expense</button>
-            </form>
-            <ToastContainer position="top-right" />
+                        </select> <br />
+                        {error.category && <div>{error.category}</div>} <br />
+                        
+                        <label className="formLabel">Date</label><br />
+                        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="formInput" /> <br />
+                        {error.date && <div>{error.date}</div>} <br />
+
+                        <button type="submit" className="primaryBtn">Add Expense</button>
+                    </form>
+                    <button className="secondaryBtn">Cancel</button>
+                    <ToastContainer position="top-right" />
+                </div>
         </div>
     )
 }
