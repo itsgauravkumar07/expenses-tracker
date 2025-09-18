@@ -3,6 +3,7 @@ import { addExpense } from "../services/localStorage";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {PlusIcon} from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
 
 function AddExpense(){
 
@@ -50,7 +51,10 @@ function AddExpense(){
         amount: numbericAmount,
         date: date,
         category: category
+
     };
+
+    setError("");
 
     const notify = () => toast.success("Expense added successfully!!", { autoClose: 3000 });
 
@@ -62,6 +66,8 @@ function AddExpense(){
     setCategory("");
     setDate("");
     } 
+
+    const navigate = useNavigate();
 
     return(
         <div className="formContainer">
@@ -75,11 +81,11 @@ function AddExpense(){
                     <form onSubmit={(e) => handleAdd(e)}>
                         <label className="formLabel">Expense name</label> <br />
                         <input type="text" placeholder="e.g Movies, Fuel" value={name} onChange={(e) => setName(e.target.value)} className="formInput"/> <br />
-                        {error.name && <div>{error.name}</div>} <br />
+                        {error.name && <div className="formError">{error.name}</div>} <br />
 
                         <label className="formLabel">Amount</label><br />
                         <input type="number" placeholder="₹ 500" value={amount} onChange={(e) => setAmount(e.target.value)} className="formInput" /> <br />
-                        {error.amount && <div>{error.amount}</div>} <br />
+                        {error.amount && <div className="formError">{error.amount}</div>} <br />
 
                         <label className="formLabel">Category</label><br />
                         <select value={category} onChange={(e) => setCategory(e.target.value)} className="formInput">
@@ -90,15 +96,15 @@ function AddExpense(){
                             <option value="bill">Bill</option>
 
                         </select> <br />
-                        {error.category && <div>{error.category}</div>} <br />
+                        {error.category && <div className="formError">{error.category}</div>} <br />
                         
                         <label className="formLabel">Date</label><br />
                         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="formInput" /> <br />
-                        {error.date && <div>{error.date}</div>} <br />
+                        {error.date && <div className="formError">{error.date}</div>} <br />
 
                         <button type="submit" className="primaryBtn">Add Expense</button>
                     </form>
-                    <button className="secondaryBtn">Cancel</button>
+                    <button className="secondaryBtn" onClick={() => navigate("/")}>Cancel</button>
                     <ToastContainer position="top-right" />
                 </div>
         </div>
