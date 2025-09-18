@@ -2,7 +2,7 @@
 export const ExpenseList = ({ expenses, onDelete }) => {
    
     if(expenses.length === 0){
-        return <p>No expenese found</p>;
+        return <p className="noExpense">No expenese found</p>;
     }
 
     return (

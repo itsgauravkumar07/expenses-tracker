@@ -100,7 +100,11 @@
     }
 
     .expenseFilter {
-        @apply bg-amber-200
+        @apply bg-white rounded-lg px-1 py-1
+    }
+
+    .noExpense {
+        @apply text-center px-2 py-2 border-1 border-gray-200 rounded-md h-20 flex flex-col justify-center mt-5 text-gray-600
     }
     
 }
