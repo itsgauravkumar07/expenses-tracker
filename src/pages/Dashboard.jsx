@@ -15,11 +15,14 @@ function Dashboard(){
     const[total, setTotal] = useState(0);
     const[catFiltered, setCatFiltered] = useState("all");
 
+    // When First Time screen load then take all the data store in localStroge and set it on expense state
     useEffect(() => {
        const allExpense = getExpense();
         setExpense(allExpense);
     }, []);
 
+
+    //It run every time when the expense changes it check and sum all the categories wise amount and also sum the total amount of all expenses
     useEffect(() => {
         const catAmount = {};
         let amountTotal = 0;
@@ -40,6 +43,9 @@ function Dashboard(){
 
     }, [expense]);
 
+    
+
+    //This function helps to delete an expense from the list
     const handleDelete = (id) => {
         const existing = getExpense();
         const newList = existing.filter(i => i.id !== id);
@@ -48,9 +54,15 @@ function Dashboard(){
         setExpense(newList);
     }
 
+    //This can simply give the active categories lenght
     const active = Object.keys(categoryAmount).length;
+
+
+    //This can give the average per day spend amount
     const averagePerDay = total/30;
 
+
+    //This can help the filter out the expenses by their category
    const catFilteredList = expense.filter((ex) => {
     if (catFiltered === "all") return true;
     return ex.category === catFiltered;

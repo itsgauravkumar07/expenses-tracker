@@ -13,7 +13,7 @@ function Navbar(){
     ]
 
     return (
-        <nav className="flex justify-between items-center h-20 pt-10 pb-5 px-6 relative shadow-lg bg-gray-100">
+        <nav className="flex justify-between items-center h-20 pt-10 pb-8 px-6 relative shadow-lg bg-gray-100">
             <div>
                 <img src={logo} alt="" className="h-10"/>
             </div>
@@ -40,6 +40,7 @@ function Navbar(){
                 <button  onClick={() => setOnMenu(!onMenu)}>☰</button>
             </div>
 
+            {/* mobile phone links */}s
             {
                 onMenu && (
                     <div className="md:hidden absolute top-15 right-4 flex flex-col bg-gray-100 px-3 py-2 gap-3 rounded-md shadow-sm">

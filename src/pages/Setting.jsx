@@ -5,8 +5,10 @@ import { Cog6ToothIcon, ExclamationCircleIcon, TrashIcon } from "@heroicons/reac
 
 function Setting(){
 
+    //It is a toast that comes form react-toastify
     const notify = () => toast.error("All Expenses is deleted", { autoClose: 2000 });
 
+    //It helps to delete all Expense
     const handleDelete = () => {
         deleteAllExpense();
         notify();

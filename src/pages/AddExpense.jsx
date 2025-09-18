@@ -19,34 +19,46 @@ function AddExpense(){
         category: ""
     });
 
+
+    //It can convert the amount into number
     const numbericAmount = Number(amount);
 
+
+    //It can handle the add the expese to the localStorage
     const handleAdd = (e) => {
 
+        //By this we can prevent the reload and also stop default behaviour of event
         e.preventDefault();
 
+
+        //validation of form
+        //name validation
         if(name === ''){
            setError(oldarr => ({...oldarr, name: "Name can't be empty"}));
             return;
         }
 
+        //amount validation
         if(numbericAmount <= 0 || isNaN(numbericAmount)){
            setError(oldarr => ({...oldarr, amount: "Enter valid amount"}));
             return;
         }
 
+        //date validation
         if(date === ''){
           setError(oldarr => ({...oldarr, date: "Enter valid Date"}));
            return;
         }
 
+        //category validation
         if(category === ''){
           setError(oldarr => ({...oldarr, category: "Enter valid Category"}));
           return;
         }
 
+        //If everything passes then data store in expense
         const expense = {
-        id: Date.now(),
+        id: Date.now(),  //its gives the current timestamps in miliseconds like:1737298345678
         name: name,
         amount: numbericAmount,
         date: date,
@@ -54,19 +66,27 @@ function AddExpense(){
 
     };
 
+    //after submission of expense it can delete all error data
     setError("");
 
+
+    //Toast from react-tostify
     const notify = () => toast.success("Expense added successfully!!", { autoClose: 3000 });
 
+    //The expense is add in localStorage with the help of addExpense function
     addExpense(expense);
+
+    //Run notify right after when the expense is stored
     notify();
 
+    //Remove all old values from inputs
     setName("");
     setAmount("");
     setCategory("");
     setDate("");
     } 
 
+    //This will helps in navagtion from one page to another
     const navigate = useNavigate();
 
     return(
