@@ -22,7 +22,7 @@ export const ExpenseList = ({ expenses, onDelete }) => {
                     <span>{ex.name}</span> 
                     <span>{ex.date}</span> 
                     <span>{ex.category}</span>
-                    <span>{ex.amount}</span>  
+                    <span>{"₹" + ex.amount}</span>  
                     <button onClick={() => {onDelete(ex.id)}} className="expenseDelete">Delete</button>
                 </div>
 
