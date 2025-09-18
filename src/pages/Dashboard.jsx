@@ -100,7 +100,7 @@ function Dashboard(){
 
                 {/* Expense summary chart */}
                 <div className="categorySummaryChart">
-                    <h2 className="cardHeading">Expense Summary Chart</h2>
+                    <h2 className="cardHeading">Category Distribution</h2>
                     <ExpenseChart data={chartData}/> 
                 </div>
             </div>

@@ -4,7 +4,7 @@ export const CategorySummary = ({ categoryAmount }) => {
     const entries = Object.entries(categoryAmount);
 
   if (entries.length === 0) {
-    return <p>No category data available</p>;
+    return <p className="mt-5 flex-row justify-center">No category data available</p>;
   }
 
     return(

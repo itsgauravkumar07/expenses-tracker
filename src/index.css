@@ -127,5 +127,9 @@
     .categorySummaryChart {
         @apply rounded-lg bg-gray-100 px-8 py-6 shadow-lg flex flex-col w-full border-2 border-gray-300 justify-between
     }
+
+    .categoryChart{
+        @apply mt-5 flex flex-col items-center justify-center
+    }
 }
 
