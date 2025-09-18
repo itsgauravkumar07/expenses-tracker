@@ -25,8 +25,8 @@ function Navbar(){
                     <NavLink 
                         key={link.to}
                         to={link.to}
-                        className={({isActive}) => `px-3 py-2 text-lg font-medium hover:text-indigo-500 ${
-                        isActive ? "text-indigo-500" : "text-gray-800"
+                        className={({isActive}) => `px-3 py-2 text-lg font-medium hover:text-blue-500 ${
+                        isActive ? "text-blue-500" : "text-gray-800"
                         }`}
                     >
                         {link.name}
@@ -47,8 +47,8 @@ function Navbar(){
                             <NavLink 
                                 key={link.to}
                                 to={link.to}
-                                className={({isActive}) => `px-3 py-2 text-lg font-medium hover:text-indigo-500 ${
-                                isActive ? "text-indigo-500" : "text-gray-800"
+                                className={({isActive}) => `px-3 py-2 text-lg font-medium hover:text-blue-500 ${
+                                isActive ? "text-blue-500" : "text-gray-800"
                                 }`}
                                 onClick={() => setOnMenu(false)}
                             >

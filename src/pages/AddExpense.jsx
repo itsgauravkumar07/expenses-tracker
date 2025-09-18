@@ -72,8 +72,8 @@ function AddExpense(){
     return(
         <div className="formContainer">
                 <div className="form">
-                    <div className="formHeader">
-                        <PlusIcon className="formPlusIcon"/>
+                    <div className="iconHeader">
+                        <PlusIcon className="icon"/>
                         <h1 className="cardHeading">Add new Expense</h1>
                         <p className="cardSubHeading">Keep track of your money by adding expenses</p>
                     </div>
