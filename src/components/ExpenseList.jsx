@@ -6,13 +6,25 @@ export const ExpenseList = ({ expenses, onDelete }) => {
     }
 
     return (
-        <div>
+        <div className="expenseList">
+            <div className="expnseLabel">
+                <label>Expense</label>
+                <label>Date</label>
+                <label>Category</label>
+                <label>Amount</label>
+                <label className="text-right">Delete</label>
+            </div>
+
            { expenses.map((ex) => (
                    
-                <li key={ex.id}> 
-                    {ex.name} - {ex.amount} - {ex.date} - {ex.category} 
-                    <button onClick = {() => {onDelete(ex.id)}} >Delete</button>
-                </li>
+                <div key={ex.id} 
+                 className="expense"> 
+                    <span>{ex.name}</span> 
+                    <span>{ex.date}</span> 
+                    <span>{ex.category}</span>
+                    <span>{ex.amount}</span>  
+                    <button onClick={() => {onDelete(ex.id)}} className="expenseDelete">Delete</button>
+                </div>
 
             ))}
         </div>

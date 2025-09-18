@@ -3,7 +3,9 @@ export const Card = ({title, des, value, icon}) => {
         <div className="card">
                 <div className="cardInner">
                     <h1 className="cardHeading">{title}</h1>
-                    {icon}
+                    <span className="cardIcon">
+                       {icon} 
+                    </span>
                 </div>
                 
                 <div>

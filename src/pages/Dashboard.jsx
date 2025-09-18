@@ -66,19 +66,22 @@ function Dashboard(){
         <div className="mx-6">
 
             <div className="cardContainer">
-                <Card title="Total expense" des="Expense of this month" value={"₹" + total} icon={<ChartBarIcon className="cardIcon" />} className="card"/>
-                <Card title="Categories" des="Active spending categories" value={active} icon={<ChartPieIcon className="cardIcon" />} />
+                <Card title="Total expense" des="Expense of this month" value={"₹" + total} icon={<ChartBarIcon  />} />
+                <Card title="Categories" des="Active spending categories" value={active} icon={<ChartPieIcon  />} />
                 <Card title="Average per day spend" des="Based on 30-day period" value={"₹" + averagePerDay.toFixed(2)} icon={"$"} />
             </div>
            
-            <div>
-                <h1>All expnese</h1>
-                <Filter value={catFiltered} onChange={setCatFiltered} />
-            </div>
+           <div className="expenseCard">
+                <div className="cardInner">
+                    <h1 className="cardHeading">All expnese</h1>
+                    <Filter value={catFiltered} onChange={setCatFiltered} />
+                </div>
 
-            <div>
-             <ExpenseList expenses={catFilteredList} onDelete={handleDelete}/>     
-            </div>
+                <div>
+                    <ExpenseList expenses={catFilteredList} onDelete={handleDelete}/>     
+                </div>
+           </div>
+           
 
            
             <div>
