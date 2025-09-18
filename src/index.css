@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 @layer components {
+    .cardContainer {
+        @apply flex flex-col md:flex-row lg:flex-row gap-4 mt-10 items-center w-full justify-center
+    }
+
     .card {
-        @apply m-10 rounded-lg bg-white px-8 py-6 shadow-2xl h-40 flex flex-col justify-between
+        @apply rounded-lg bg-gray-100 px-8 py-6 shadow-lg flex flex-col w-full min-h-40 max-h-60 border-2 border-gray-300 justify-between
     }
 
     .cardInner {
@@ -14,7 +18,62 @@
 
 
 
-    /* Headings */
-    
+    /* Buttons */
+    .primaryBtn {
+        @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition
+    }
+
+    .secondaryBtn {
+        @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition
+    }
+
+    .dangerBtn {
+        @apply bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition
+    }
+
+
+
+    /* Input and Select */
+    .inputStyle {
+        @apply w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400
+    }
+
+    .selectStyle {
+        @apply w-full px-3 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400
+    }
+
+
+
+    /* Expense list and summary list */
+    .listItem {
+        @apply flex justify-between items-center border-b py-2 text-gray-700
+    }
+
+    .listBtn {
+        @apply text-sm text-red-500 hover:text-red-700
+    }
+
+
+
+    /* Heading and subheading */
+    .heading {
+        @apply text-2xl md:text-3xl font-bold text-gray-800
+    }
+
+    .subHeading {
+        @apply text-lg md:text-xl font-medium text-gray-600
+    }
+
+    .cardHeading {
+        @apply text-lg text-gray-700 font-medium
+    }
+
+    .cardSubHeading {
+        @apply text-sm text-gray-600
+    }
+
+    .cardValue {
+        @apply text-2xl font-bold text-gray-800
+    }
 }
 

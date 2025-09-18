@@ -13,7 +13,7 @@ function Navbar(){
     ]
 
     return (
-        <nav className="flex justify-between items-center h-20 pt-10 pb-5 px-6 relative shadow-lg">
+        <nav className="flex justify-between items-center h-20 pt-10 pb-5 px-6 relative shadow-lg bg-gray-100">
             <div>
                 <img src={logo} alt="" className="h-10"/>
             </div>

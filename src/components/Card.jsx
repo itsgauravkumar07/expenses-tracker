@@ -2,13 +2,13 @@ export const Card = ({title, des, value, icon}) => {
     return (
         <div className="card">
                 <div className="cardInner">
-                    <h1>{title}</h1>
+                    <h1 className="cardHeading">{title}</h1>
                     {icon}
                 </div>
                 
                 <div>
-                    <p>{value}</p>
-                    <p>{des}</p>
+                    <p className="cardValue">{value}</p>
+                    <p className="cardSubHeading">{des}</p>
                 </div>
                 
             </div>
