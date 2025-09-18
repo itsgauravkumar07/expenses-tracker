@@ -40,7 +40,7 @@ function Navbar(){
                 <button  onClick={() => setOnMenu(!onMenu)}>☰</button>
             </div>
 
-            {/* mobile phone links */}s
+            {/* mobile phone links */}
             {
                 onMenu && (
                     <div className="md:hidden absolute top-15 right-4 flex flex-col bg-gray-100 px-3 py-2 gap-3 rounded-md shadow-sm">

@@ -1,12 +1,36 @@
-# React + Vite
+# TrackWise - Expense Tracker  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and user-friendly Expense Tracker app built with **React** and **TailwindCSS**. It helps you manage your daily expenses, track spending by categories, and visualize your spending with charts.  
 
-Currently, two official plugins are available:
+## 🚀 Features  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add and delete expenses  
+- Track expenses by categories (e.g., Food, Transport, Bills)  
+- View a **dashboard** with expense summaries  
+- **Charts** to visualize your spending patterns (Pie chart for categories, Bar chart for monthly expenses)  
+- Separate **Add Expense** page with form  
+- **Settings** page with options app info and Delete all data 
+- Data persistence with **localStorage** (no backend required)  
+- Responsive UI with TailwindCSS  
 
-## Expanding the ESLint configuration
+## 📸 Screens  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Dashboard** → See all your expenses, category summary, and charts 
+    ![Home Page](./src/assets/dashboard.png)
+
+- **Add Expense** → Add new expenses with name, amount, category, and date  
+    ![Add Expense Page](./src/assets/addexpense.png)
+
+- **Settings** → Change currency, theme, and view app info  
+    ![Setting Page](./src/assets/setting.png)
+
+## 🛠️ Tech Stack  
+
+- **React** – UI framework  
+- **TailwindCSS** – Styling  
+- **React Router DOM** – Navigation  
+- **localStorage** – Data storage  
+- **Recharts (or Chart.js)** – For charts and data visualization  
+
+## 🔗 Demo link
+ - 
