@@ -1,17 +1,20 @@
-# TrackWise - Expense Tracker  
+# Expense Tracker – Personal Finance Dashboard
 
-A simple and user-friendly Expense Tracker app built with **React** and **TailwindCSS**. It helps you manage your daily expenses, track spending by categories, and visualize your spending with charts.  
+A simple personal finance tracker built with React and Tailwind CSS.  
+Users can log daily expenses, categorize them, and view totals dynamically.
 
-## 🚀 Features  
+## 🔥 Features
+- Add and categorize expenses
+- Dynamic total calculation
+- Real-time UI updates using React hooks
+- Responsive dashboard layout
+- Clean and modern design
+- API integration (if applicable)
 
-- Add and delete expenses  
-- Track expenses by categories (e.g., Food, Transport, Bills)  
-- View a **dashboard** with expense summaries  
-- **Charts** to visualize your spending patterns (Pie chart for categories, Bar chart for monthly expenses)  
-- Separate **Add Expense** page with form  
-- **Settings** page with options app info and Delete all data 
-- Data persistence with **localStorage** (no backend required)  
-- Responsive UI with TailwindCSS  
+## 🛠️ Tech Stack
+- React
+- Tailwind CSS
+- Vite
 
 ## 📸 Screens  
 
@@ -23,14 +26,18 @@ A simple and user-friendly Expense Tracker app built with **React** and **Tailwi
 
 - **Settings** → Change currency, theme, and view app info  
     ![Setting Page](./src/assets/setting.png)
-
-## 🛠️ Tech Stack  
-
-- **React** – UI framework  
-- **TailwindCSS** – Styling  
-- **React Router DOM** – Navigation  
-- **localStorage** – Data storage  
-- **Recharts (or Chart.js)** – For charts and data visualization  
+  
 
 ## 🔗 Live link
- - https://trackwise-expense.vercel.app/
+https://trackwise-expense.vercel.app/
+
+## 📂 GitHub Repository
+https://github.com/itsgauravkumar07/Expense-Tracker
+
+## 📦 Setup & Installation
+
+```bash
+git clone https://github.com/itsgauravkumar07/Expense-tracker.git
+cd BillWise  
+npm install  
+npm run dev
