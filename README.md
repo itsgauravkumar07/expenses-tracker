@@ -38,6 +38,6 @@ https://github.com/itsgauravkumar07/Expense-Tracker
 
 ```bash
 git clone https://github.com/itsgauravkumar07/expense-tracker.git
-cd expense tracker  
+cd expense-tracker  
 npm install  
 npm run dev
