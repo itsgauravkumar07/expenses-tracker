@@ -1,4 +1,4 @@
-# Expense Tracker – Personal Finance Dashboard
+# Expense Tracker – Personal Finance Dashboard(TrackWise)
 
 A simple personal finance tracker built with React and Tailwind CSS.  
 Users can log daily expenses, categorize them, and view totals dynamically.
