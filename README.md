@@ -34,6 +34,12 @@ https://trackwise-expense.vercel.app/
 ## 📂 GitHub Repository
 https://github.com/itsgauravkumar07/Expense-Tracker
 
+## 📘 What I Learned
+- Managing state effectively using React
+- Structuring UI using Tailwind CSS
+- Creating reusable components
+- Handling user interactions and dynamic UI
+
 ## 📦 Setup & Installation
 
 ```bash
